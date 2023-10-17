@@ -1,38 +1,539 @@
-.App {
+* {
+
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+
+  background-color: rgb(210, 255, 255);
+}
+
+
+
+.sidebar {
+
+  border: 2px solid #000;
+  min-height: 1000px;
+  width: 250px;
+  background-color: darkblue;
+  color: white;
+  position: relative;
+  left:1px;
+  top:1px;
+  z-index: 2;
+  float: left;
+
+}
+.container{
+
+  display: flex;
+  flex-direction: column;
+}
+.charts{
+
+  display: flex;
+  justify-content: center;
+  
+}
+
+.charts .barchat {
+
+width:700px;
+  position: relative;
+  background-color: white;
+  border-radius: 10px;
+  border: none;
+  padding: 20px;
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+  margin:25px;
+}
+
+.barchat h3 {
+
+  text-align: left;
+}
+
+.barchat select{
+position: absolute;
+top:20px;
+right: 30px;
+border-radius: 10px;
+font-size: 10px;
+padding: 5px 10px;
+border: none;
+background-color: #b2d7ff;
+  
+}
+.piechart {
+
+  border: none;
+
+  border-radius: 10px;
+  width:300px;
+  background-color: white;
+  height: 400px;
+  padding: 20px;
+  margin-left: 35px;
+  margin-top: 25px;
+  margin-left: 25px;
+  margin-bottom: 25px;
+  
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+  position: relative;
+
+
+}
+.text-area{
+
+  position: absolute;
+  top:170px;
+  left:100px;
+  text-align: center;
+}
+.text-area h3,p{
+
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.piechart h3{
+
+text-align: left;
+
+
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.piechart p {
+ margin-bottom: 20px;
+  text-align: left;
+  opacity: 0.5;
+}
+.sidebar ul {
+
+  list-style-type: none;
+  margin-top: 25px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+
+.head {
+
   display: flex;
-  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap:7px;
+  margin-top: 15px;
+}
+
+.list {
+
+  width:70%;
+  margin-left:45px;
+ 
+  padding: 10px 20px;
+  gap:10px;
+  border-radius: 10px;
+  cursor: pointer;
+  display:flex;
+  align-items:center;
+  justify-content:left;
+  text-align: center;
+  
+}
+
+.list:hover{
+
+  color: darkblue;
+  background-color: aliceblue;
+  transition: all 0.8s;
+}
+
+.foot{
+
+width:91%;
+height: 50px;
+border-radius: 10px;
+background-color:rgba(212, 192, 192,0.5);
+display: flex;
+align-items: center;
+padding: 30px 10px;
+gap:10px;
+position: absolute;
+top: 600px;
+left:15px
+}
+
+.foot img {
+
+  border-radius: 25px;
+}
+
+#menubtn {
+
+  width:30px;
+  position: absolute;
+  top:15px;
+  left:10px;
+  z-index: 2;
+
+  border: 2px solid white;
+  display: none;
+}
+
+@media screen and (max-width:525px){
+
+  .sidebar{
+
+    
+   display: none;
+  
+  }
+  
+
+  #menubtn {
+
+    display: block;
+    z-index: 3;
+  }
+
+  .navclass {
+
+    display: block;
+    
+  border: 2px solid #000;
+  height: 2000px;
+  width: 250px;
+  background-color: darkblue;
+  color: white;
+  position: absolute;
+  z-index: 2;
+  left: 1px;
+  top: 1px;
+
+    
+    
+  
+  }
+
+  .charts{
+
+    flex-direction: column;
+    align-items: center;
+  }
+  .piechart {
+
+    margin-left: 30px;
+  }
+
+.charts  .barchat {
+  width:370px;
+  margin-left: 50px;
+  }
+
+}
+
+.container {
+
+  
+  text-align: center;
+  
+}
+
+.header {
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding:20px 40px;
+}
+
+.searchbar {
+  
+  display: flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  padding: 4px 10px;
+  gap:5px;
+  background-color: white;
+  border-radius: 4px;
+
+  
 }
 
-.App-link {
-  color: #61dafb;
+.searchbar input {
+
+  border: none;
+  outline: none;
+
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.cards {
+
+  display: flex;
+  flex-direction: row;
+  gap:15px;
+  align-items: center;
+  padding-left: 30px;
+
+  
+}
+
+.cards .card-1,.card-2,.card-3,.card-4{
+
+  display: flex;
+  background-color: white;
+  border-radius: 15px;
+  padding:25px;
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+  margin:0px 20px 0px 20px;
+
+}
+
+
+.card-1 img {
+
+  border-radius: 25px;
+}
+
+.card-1 span{
+
+  color: rgb(58, 219, 58);
+}
+
+.card-2 img {
+
+  border-radius: 25px;
+}
+
+.card-2 span{
+
+  color: rgb(227, 7, 239);
+}
+
+.card-3 img {
+
+  border-radius: 25px;
+}
+
+.card-3 span{
+
+  color: rgb(37, 16, 72);
+
+}
+
+.card-4 img {
+
+  border-radius: 25px;
+}
+.card-4 span{
+
+  color: rgb(123, 201, 222);
+
+}
+
+
+.card-1-text {
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-left: 10px;
+}
+@media screen and (max-width:526px){
+
+  
+  .cards {
+
+    display: flex;
+
+    flex-direction: column;
+    padding-left: 15px;
+   
+    
   }
-  to {
-    transform: rotate(360deg);
+
+  .header{
+
+    flex-direction: column-reverse;
   }
+
+  .header h3 {
+
+    margin-top: 25px;
+  }
+
+
+}
+
+.p-1 {
+
+  opacity: 0.5;
+}
+hr {
+
+  opacity: 0.5;
+}
+.footer {
+
+  background-color: white;
+  margin-top: 30px;
+  
+  margin-right: 25px;
+  margin-left: 25px;
+  
+  border-radius: 10px;
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+}
+.footer-header{
+
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+}
+.footer-header-inputs{
+
+  display: flex;
+
+}
+
+.footer-searchbar{
+
+  display: flex;
+  align-items: center;
+  padding: 4px 10px;
+  gap:5px;
+  background-color: azure;
+  border-radius: 4px;
+}
+
+.footer-searchbar input{
+
+  border: none;
+  outline:none;
+  background-color: azure;
+}
+
+.footer-header select {
+
+  margin-left: 20px;
+  border-radius: 10px;
+font-size: 10px;
+padding: 5px 10px;
+border: none;
+background-color: #b2d7ff;
+
+}
+
+.footer-headings{
+
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+  padding: 10px;
+}
+.footer-headings p {
+
+  opacity: 0.5;
+}
+
+.sub-headings{
+
+  display: flex;
+  
+}
+.sub-headings p {
+
+  margin-left:30px;
+  margin-right: 30px;
+  opacity:0.5;
+}
+.product-1{
+
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+.product-1 img {
+
+  margin-right: 10px;
+  border-radius: 5px;
+}
+.product-name{
+
+  display: flex;
+}
+.product-name-text{
+
+  text-align: left;
+}
+.product-name-text p{
+
+  opacity: 0.5;
+}
+.product-stats{
+
+  display: flex;
+  align-items: center;
+}
+
+.product-stats p {
+
+  margin-left: 35px;
+  margin-right: 30px;
+}
+
+@media screen and (max-width:525px){
+
+  .footer-header{
+
+    flex-direction: column;
+  }
+  .footer-headings{
+
+    justify-content: start;
+  }
+
+  .product-1{
+
+    justify-content:start;
+  }
+
+  .product-stats p{
+
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+  .product-name{
+
+    flex-direction: column;
+  }
+
+  .sub-headings p{
+
+    margin-left: 25px;
+    margin-right: 5px;
+  }
+
+.footer-header-inputs{
+
+  flex-direction: column;
+
+}
+.footer-header select {
+
+  margin-left: 5px;
+  margin-top: 10px;
+}
+.product-name-text{
+
+  text-align: left;
+}
+.product-name-text p{
+
+  text-align: left;
+  font-size: 10px;
+
+}
 }
